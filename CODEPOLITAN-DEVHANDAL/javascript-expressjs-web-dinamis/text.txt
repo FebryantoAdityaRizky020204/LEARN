@@ -1,0 +1,11 @@
+Templating
+    -> Cara untuk membuat pattern halaman web yang bisa kita ubah kontennya secara dinamis
+    Contoh: kita cukup membuat satu file untuk menampilkan halaman berita dan kita bisa
+        ubah isi beritanya secara dinamis dengan menggunakan satu file halaman tersebut
+
+pada express.js untuk melakukan ini kita bisa menggunakan engine templating seperti 
+    -> [ejs, nunjuks, pug, handlebars, ...]
+
+{ kali ini kita akan menggunakan ejs [https://ejs.co] }
+
+! Tapi nggak dilanjut karena belajar template yang lain

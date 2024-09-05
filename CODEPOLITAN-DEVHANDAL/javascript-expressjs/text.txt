@@ -1,0 +1,25 @@
+express.JS
+    -> Fast, unopininated, minimalist web framework for Node.JS
+    -> Sebuah NPM package yang memiliki banyak sekali method pilihan plugin
+        yang memudahkan kita membuat web application dan API
+
+Express membantu kita
+    -> menjalankan server untuk menerima request
+    -> mengurai (parsing) request yang datang
+    -> mencocokkan request ke suatu route tertentu
+    -> membuat http response dan mengumpulkan konten untuk ditampilkan
+
+Library VS Framework
+
+    Library ->> kamu bebas menggunakan dan mengatur alur dari aplikasi yang dibuat
+        |-> kapan menggunakan library atau tidak
+    Framework ->> framework mengatur kamu bagaimana alur membuat sebuah aplikasi dan
+        |-> memanfaatkan fungsi yang sudah diracik agar lebih mudah digunakan.
+
+
+INSTALL
+1. buat folder kemudian masuk ke direktori foldernya
+1. npm init -y
+2. npm i express 
+
+sudah terinstall

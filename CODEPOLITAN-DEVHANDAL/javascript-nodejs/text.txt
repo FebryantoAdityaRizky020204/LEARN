@@ -1,0 +1,20 @@
+NODE.JS
+-> Sebuah Runtime environment untkuk JavaScript yang bersfat Open-Source dan cross-platform.
+    Sehingga bisa menjalankan perintah JavaScript di luar lingkup browser. Bahkan bisa seperti pemrograman
+    server-side seperti PHP, Ruby, dan python.
+
+Apa Yang Bisa Dilakukan NODE.JS
+-> Bikin Web Server
+    Tools Berbasis CLI
+    Native App
+    Video Game, dll
+
+NPM - Node Packaged Manager [https://www.npmjs.com/]
+->  Sebuah pustaka yang memiliki ribuan packages yang bebas kita gunakan untuk mempermudah
+    pengembangan
+    ->Tools berbasis CLI yang memudahkan kita memulai membuat project atau menginstall package 
+        yang ada di pustakanya
+    
+Global Package - 
+->  Ada beberapa package yang bisa diinstall secara global,
+    artinya package tersebut bisa dipanggil diluar module

@@ -1,0 +1,3 @@
+document.addEventListener("click", () => alert('Thanks For Learn'))
+
+Hands-on Coding: The Languange Itself

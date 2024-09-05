@@ -1,0 +1,7 @@
+KEYWORD     
+- CALL STACK FUNCTION
+- JavaScript itu Single Thread
+- 
+
+VISUALIZATION [https://pythontutor.com/]
+Untuk melakukan visualisasi kode yang akan dijalankan 'perstep'
