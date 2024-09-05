@@ -1,0 +1,14 @@
+Perbedaan GET dan POST
+GET
+    -> digunakan untuk menarik/menerima data
+    -> data dikirim melalui query string
+    -> informasi yang dikirm terlihat di URL
+    -> Jumlah data yang dikirim terbatas
+
+POST
+    -> digunakan untuk mengirim data ke server
+    -> digunakan pada saat membuat/mengubah data
+    -> data dikirim melalui body bukan head
+    dapat mengirim data dengan tipe JSON
+
+
