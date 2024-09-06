@@ -14,20 +14,20 @@ app.set('view engine', 'ejs');
 
 const comments = [
     {
-        'username': 'Andy',
-        'text': 'ini adalah komentar 1',
+        username: 'Andy',
+        text: 'ini adalah komentar 1',
     },
     {
-        'username': 'Andy2',
-        'text': 'ini adalah komentar 2',
+        username: 'Andy2',
+        text: 'ini adalah komentar 2',
     },
     {
-        'username': 'Andy3',
-        'text': 'ini adalah komentar 3',
+        username: 'Andy3',
+        text: 'ini adalah komentar 3',
     },
     {
-        'username': 'Andy4',
-        'text': 'ini adalah komentar 4',
+        username: 'Andy4',
+        text: 'ini adalah komentar 4',
     }
 ];
 
@@ -42,6 +42,16 @@ const comments = [
 
 app.get('/comments', (request, response) => {
     response.render('comments/index', {comments})
+})
+
+app.get('/comments/create', (request, response) => {
+    response.render('comments/create')
+})
+
+app.post('/comments', (request, response) => {
+    const {username, text} = request.body
+    comments.push({username, text})
+    response.redirect('/comments')
 })
 
 
