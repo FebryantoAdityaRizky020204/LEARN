@@ -1,5 +1,5 @@
 const express = require('express')
-
+const path = require('path')
 const app = express();
 
 
@@ -9,6 +9,42 @@ const app = express();
  */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+const comments = [
+    {
+        'username': 'Andy',
+        'text': 'ini adalah komentar 1',
+    },
+    {
+        'username': 'Andy2',
+        'text': 'ini adalah komentar 2',
+    },
+    {
+        'username': 'Andy3',
+        'text': 'ini adalah komentar 3',
+    },
+    {
+        'username': 'Andy4',
+        'text': 'ini adalah komentar 4',
+    }
+];
+
+/**
+ * ! BLUEPRINT
+ * GET /comments - list all comments
+* POST /comments - create a new comment
+* GET /comments/:id - get one comment by id
+* PATCH/PUT /comment/:id - update one comment by id
+* DELETE /comments/:id - delete one comment by id
+ */
+
+app.get('/comments', (request, response) => {
+    response.render('comments/index', {comments})
+})
+
+
 
 app.get('/order', (request, response) => {
     response.send('GET order response')

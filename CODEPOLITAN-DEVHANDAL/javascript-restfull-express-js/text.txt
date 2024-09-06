@@ -12,3 +12,10 @@ POST
     dapat mengirim data dengan tipe JSON
 
 
+Sedikit Teori Tentang REST
+ -> Representational State Transfer
+    * sebuah arsitektur sistem terdistribusi, sederhananya adalah panduan
+      komunikasi data untuk CRUD antara client dan server
+    * secara konsep REST menjembatani antara data yang ada di server supaya bisa
+      diproses CRUD oleh banyak sumber melalui format URL dan HTTP Verb
+
