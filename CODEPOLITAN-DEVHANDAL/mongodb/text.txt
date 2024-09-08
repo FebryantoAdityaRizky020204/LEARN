@@ -1,0 +1,49 @@
+Mongo -> Database berbasis document
+? Kenapa perlu menggunakan database
+    -> dapat meyimpan banyak data dan dikumpulkan secara efisien
+    -> tools yang memiliki fungsi query untuk kelola data, membuat dan mengubah
+    -> menyediakan fitur keamanan dan kendali akses data
+    -> umumnya dapat menampung skala data dengan baik
+
+SQL VS NoSQL
+? SQL
+    -> Structured Query Languange databasem adalah database yang berelasi,
+        dimana ita mendefinisikan skema tabel terlebih dahulu sebelum data
+        ini akan kita simpan didalamnya.
+? NoSQL
+    -> NoSQL tidak menggunakan SQL
+    -> Jenisnya banyak
+    -> salah satunya berbentuk dokumen dan memiliki
+        key-value, graph store
+
+Popular Database
+SQL
+    -> MySQL
+    -> postgres
+    -> SQLite
+    -> Oracle
+    -> Microsoft SQL
+NoSQL
+    -> MongoDB
+    -> CouchDB
+    -> Neo4j
+    -> Cassandra
+    -> Redis
+
+!Kenapa Belajar MongoDB
+    -> MongoDB sering digunakan dengan project Node dan ExpressJS (eg: MEAN, MERN)
+    -> mudah untuk mempelajarinya
+    -> cocok banget buat projek Javascript
+    -> Popular, Artinya banyak komunitas dan panduan kalo kita mengalami kendala
+
+
+Cara Menginstall
+    -> Download MongoDB di [https://www.mongodb.com/try/download/community]
+    -> kemudian download shell tools di [https://www.mongodb.com/try/download/shell]
+        -> download file msi nya jika ingin file installer
+        -> download zip jika ingin integrasi manual
+           karena ingin ditambahkan ke laragon download file zip nya, tutorial cari di youtube
+
+JSON and BSON
+    [https://www.mongodb.com/resources/basics/json-and-bson]
+    
