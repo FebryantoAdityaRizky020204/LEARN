@@ -3,19 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Comments</title>
+    <title>Edit Comments</title>
 </head>
 <body>
     <h2>Form Create Comments </h2>
-    <form action="/comments" method="POST">
-        <section>
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" placeholder="Username">
-        </section>
-
+    <form action="/comments/<%= comment.id %>?_method=PATCH" method="POST">
         <section>
             <label for="text">Comment</label>
-            <textarea name="text" id="text" cols="30" rows="5"></textarea>
+            <textarea name="text" id="text" cols="30" rows="5"><%= comment.text %></textarea>
         </section>
 
         <button type="submit">Submit</button>

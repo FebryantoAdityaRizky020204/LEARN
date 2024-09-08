@@ -9,7 +9,16 @@
     <h2>List Of Comments</h2>
     <ul>
         <% for(let comment of comments) { %>
-            <li><%= comment.username %> - <%= comment.text %></li>
+            <li>
+                <%= comment.username %> - <%= comment.text %>
+                <a href="/comments/<%= comment.id %>">detail</a>
+                <a href="/comments/<%= comment.id %>/edit">edit</a>
+                <span>
+                    <form action="/comments/<%= comment.id %>?_method=DELETE" method="POST">
+                        <button>Delete</button>
+                    </form>
+                </span>
+            </li>
         <% } %>
     </ul>
     <a href="/comments/create">Create Comment</a>
