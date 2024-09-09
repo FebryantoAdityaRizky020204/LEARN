@@ -47,3 +47,40 @@ Cara Menginstall
 JSON and BSON
     [https://www.mongodb.com/resources/basics/json-and-bson]
     
+
+Perintah Insert di MongoDB
+    use sample_db
+    db.products.insertOne({name: "Produk A Plusls", price: 1000, tags: ["smartphone", "gadget"]})
+    db.products.find()
+    db.products.insertMany([{name: "Produk A Plusls", price: 1000, tags: ["smartphone", "gadget"]}, {name: "Produk A Plusls", price: 1000, tags: ["smartphone", "gadget"]}, {name: "Produk A Plusls", price: 1000, tags: ["smartphone", "gadget"]}])
+    db.products.find()
+
+Perintah Find dan FindOne di MongoDB
+    gunakan sample-data ini [https://github.com/lunadiotic/sample-data/blob/main/products.json]
+    kemudian convert ke json satu line menggunakan [https://www.text-utils.com/json-formatter/]
+    db.products.insertMany("pastekan hasil json-formatter one line nya")
+    db.products.find({color: 'hitam'})
+    db.products.find({color: { $in : ['hitam', 'abu-abu'] } })
+    db.products.findOne({color: 'hitam'})
+
+Perintah UpdateOne dan UpdateMany
+    db.products.updateOne({name: "Produk A Plusls"}, { $set: {name: "Product A Plus" } })
+    db.products.find()
+    db.products.updateMany({name: "Produk A Plusls"}, { $set: {name: "Product A Plus" } })
+    db.products.find()
+    db.products.updateOne({name: 'Product A Plus'}, { $set: { "avaiability.offline": true, "avaiability.online": true   } })
+    db.products.find({name: 'Product A Plus'})
+    db.products.updateMany({name: 'Product A Plus'}, { $set: { "avaiability.offline": true, "avaiability.online": true   } })
+    db.products.find({name: 'Product A Plus'})
+
+Perintah DeleteOne dan DeleteMany
+    db.products.find({name: 'Product A Plus'})
+    db.products.deleteOne({name: 'Product A Plus'})
+    db.products.find({name: 'Product A Plus'})
+    db.products.deleteMany({name: 'Product A Plus'})
+    db.products.find({name: 'Product A Plus'}) // data sudah tidak ada
+    db.products.deleteMany({"avaiability.offline": false})
+
+Beberapa Query Operator yang perlu Dicoba
+    db.products.find({ price : { $lt : 500000 } }) // $lt = less than, $lte = less than equal, $gt, $gte
+
