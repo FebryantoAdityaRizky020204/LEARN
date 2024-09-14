@@ -1,0 +1,11 @@
+Mongoose
+    Library that connect you to mongodb from javascript
+    Menyediakan fungsi dan cara untuk membuat model data dengan skema dan membuatnya.
+    juga, memiliki fitur validasi dengan query yang kompleks yang bisa digunakan JavaScript.
+
+ODM
+    #Object Data Mapper
+    #Object Document Mapper
+    -> Bekerja untuk memetakan data yang datang dari database agar
+        bisa digunakan di javascript sebagai object
+
