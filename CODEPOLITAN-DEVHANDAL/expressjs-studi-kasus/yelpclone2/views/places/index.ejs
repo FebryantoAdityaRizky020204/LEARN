@@ -1,0 +1,74 @@
+<% layout('layouts/app') %>
+
+<h1>Places</h1>
+<div id="map" style="width: 100%;height: 450px;margin-bottom: 5%;"></div>
+<% for(const place of places) { %>
+    <div class="card mb-3">
+        <div class="row">
+            <div class="col-md-4">
+                <% if(place.images.length){ %>
+                <img class="img-fluid" src="/images/<%= place.images[0].filename %>" alt="">
+                <% } else { %>
+                    <img class="img-fluid" src="https://source.unsplash.com/collection/2349781/1280x720" alt="">
+                <% } %>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><%= place.title %></h5>
+                    <p class="card-text"><%= place.description  %></p>
+                    <p class="card-text">
+                        <small class="text-secondary"><%= place.location  %></small>
+                    </p>
+                    <a href="/places/<%= place._id %>" class="btn btn-primary">View <%= place.title %></a>
+                </div>
+            </div>
+        </div>
+    </div>
+<% } %>
+
+<script>
+    const clusterPlaces = <%- cluster %>
+
+    function startClustering(map, data) {
+        // First we need to create an array of DataPoint objects,
+        // for the ClusterProvider
+        var dataPoints = data.map(function (item) {
+          return new H.clustering.DataPoint(item.lat, item.lng);
+        });
+      
+        // Create a clustering provider with custom options for clusterizing the input
+        var clusteredDataProvider = new H.clustering.Provider(dataPoints, {
+          clusteringOptions: {
+            // Maximum radius of the neighbourhood
+            eps: 32,
+            // minimum weight of points required to form a cluster
+            minWeight: 2
+          }
+        });
+      
+        // Create a layer tha will consume objects from our clustering provider
+        var clusteringLayer = new H.map.layer.ObjectLayer(clusteredDataProvider);
+      
+        // To make objects from clustering provder visible,
+        // we need to add our layer to the map
+        map.addLayer(clusteringLayer);
+    }
+
+    const platform = new H.service.Platform({
+        'apikey': 'cKKA1D0ftrVJs4QkN-6rCiVWIOiCgsvi3UEVAjhWqAs'
+    });
+    const defaultLayers = platform.createDefaultLayers();
+    const map = new H.Map(
+        document.getElementById('map'),
+        defaultLayers.vector.normal.map,
+        {
+          zoom: 2,
+          center: { lat: -0.9730197, lng: 116.7034266 },
+          pixelRatio: window.devicePixelRatio || 1
+        });
+    
+    const ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');
+    const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+    startClustering(map, clusterPlaces);
+</script>
